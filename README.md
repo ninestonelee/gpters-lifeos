@@ -8,19 +8,31 @@
 
 ## 🚀 설치 (1분)
 
-### 방법 1: Claude Code 스킬 (권장)
+### 방법 1: GitHub 스킬 설치 (⭐ 가장 추천)
 
+**Mac / Linux:**
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
+```
+
+**Windows (PowerShell):**
+```powershell
+iex (curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
+```
+
+설치 후:
+1. Claude Code 재시작 (또는 `/reload-skills` 실행)
+2. `/lifeOS-init` 명령어 실행
+3. 이름 입력 → Obsidian 자동 생성
+
+### 방법 2: Claude Code 스킬 (설치 완료 후)
+
+Claude Code에서 직접 실행:
 ```bash
 /lifeOS-init
 ```
 
-Claude Code에서 위 명령어를 실행하면:
-1. 이름 입력 (영문)
-2. Obsidian 볼트 자동 생성
-3. 기본 폴더 + 템플릿 자동 배치
-4. Obsidian 자동 실행
-
-### 방법 2: 수동 설치
+### 방법 3: 수동 설치 (고급 사용자)
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/lifeOS-init.sh)
