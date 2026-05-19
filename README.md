@@ -10,21 +10,17 @@
 
 ### 방법 1: GitHub 스킬 설치 (⭐ 가장 추천)
 
-**Mac / Linux / WSL:**
+**Mac / Linux:**
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
 ```
 
-**Windows (Git Bash 또는 WSL 필수):**
-- **WSL 설치된 경우** (권장):
-  ```bash
-  wsl bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
-  ```
-- **Git Bash 설치된 경우**:
-  ```bash
-  bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
-  ```
-- **Neither 설치 안 됨**: [방법 3: 수동 설치](#방법-3-수동-설치-고급-사용자)로 진행
+**Windows (PowerShell):**
+```powershell
+curl.exe -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh | wsl bash
+```
+
+> **WSL이 필요합니다.** [아래 WSL 설치 가이드](#wsl-설치-가이드-windows-전용) 참조
 
 설치 후:
 1. Claude Code 재시작 (또는 `/reload-skills` 실행)
@@ -114,6 +110,43 @@ bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/m
 4. **첫 작업: 북극성 정의**
    - `05_context/life_context.md` 작성 (가치 3개)
    - `04_concepts/북극성_[name].md` 작성 (W1에서 발표할 내용)
+
+---
+
+## WSL 설치 가이드 (Windows 전용)
+
+### 시스템 요구사항
+- **Windows 10** Build 2004 이상 또는 **Windows 11**
+- 관리자 권한
+
+### 설치 단계
+
+#### 1️⃣ PowerShell을 관리자로 실행
+- `Win + X` → "Windows PowerShell (관리자)" 클릭
+
+#### 2️⃣ WSL 및 Ubuntu 설치
+```powershell
+wsl --install
+```
+- 기본값으로 Ubuntu Linux가 설치됩니다
+- 설치 후 컴퓨터 재부팅
+
+#### 3️⃣ Ubuntu 첫 실행
+```powershell
+wsl
+```
+- 사용자명과 비밀번호 설정 (기억해두세요)
+- `exit` 또는 `Ctrl+D`로 WSL 종료
+
+#### 4️⃣ 설치 확인
+```powershell
+wsl --list --verbose
+```
+- Ubuntu 상태가 "Running"이면 성공
+
+### 더 알아보기
+- [Microsoft WSL 공식 가이드](https://learn.microsoft.com/en-us/windows/wsl/install)
+- WSL 2로 자동 설정됩니다 (권장)
 
 ---
 
