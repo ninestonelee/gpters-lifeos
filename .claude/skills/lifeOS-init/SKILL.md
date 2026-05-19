@@ -1,8 +1,6 @@
 ---
 name: lifeOS-init
 description: 인생OS 볼트 빠른 시작 (새 사용자용) - Obsidian 자동 초기화
-trigger: /lifeOS-init
-output: text
 ---
 
 # 🌟 인생OS 초기화 스킬

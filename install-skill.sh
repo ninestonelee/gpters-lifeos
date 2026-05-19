@@ -20,10 +20,14 @@ if [ ! -d "$SKILLS_DIR" ]; then
     echo -e "${GREEN}✓ 디렉토리 생성 완료${NC}"
 fi
 
+# 스킬 디렉토리 생성
+SKILL_DIR="$SKILLS_DIR/lifeOS-init"
+mkdir -p "$SKILL_DIR"
+
 # 스킬 파일 다운로드
 echo -e "${BLUE}⬇️  스킬 파일 다운로드 중...${NC}"
-SKILL_URL="https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/.claude/skills/lifeOS-init.md"
-SKILL_PATH="$SKILLS_DIR/lifeOS-init.md"
+SKILL_URL="https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/.claude/skills/lifeOS-init/SKILL.md"
+SKILL_PATH="$SKILL_DIR/SKILL.md"
 
 if curl -fsSL "$SKILL_URL" -o "$SKILL_PATH"; then
     echo -e "${GREEN}✓ 스킬 파일 다운로드 완료${NC}"
@@ -31,6 +35,13 @@ else
     echo -e "${RED}❌ 스킬 파일 다운로드 실패${NC}"
     echo "URL: $SKILL_URL"
     exit 1
+fi
+
+# 기존 flat file 제거 (호환성)
+OLD_SKILL_PATH="$SKILLS_DIR/lifeOS-init.md"
+if [ -f "$OLD_SKILL_PATH" ]; then
+    rm "$OLD_SKILL_PATH"
+    echo -e "${BLUE}📁 기존 파일 정리 완료${NC}"
 fi
 
 # 설치 완료 메시지
