@@ -1,0 +1,33 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (if used)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Logs
+*.log
+logs/
+
+# Temporary
+*.tmp
+.cache/
