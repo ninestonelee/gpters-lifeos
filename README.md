@@ -10,15 +10,21 @@
 
 ### 방법 1: GitHub 스킬 설치 (⭐ 가장 추천)
 
-**Mac / Linux:**
+**Mac / Linux / WSL:**
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
 ```
 
-**Windows (PowerShell):**
-```powershell
-iex (curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
-```
+**Windows (Git Bash 또는 WSL 필수):**
+- **WSL 설치된 경우** (권장):
+  ```bash
+  wsl bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
+  ```
+- **Git Bash 설치된 경우**:
+  ```bash
+  bash <(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)
+  ```
+- **Neither 설치 안 됨**: [방법 3: 수동 설치](#방법-3-수동-설치-고급-사용자)로 진행
 
 설치 후:
 1. Claude Code 재시작 (또는 `/reload-skills` 실행)
