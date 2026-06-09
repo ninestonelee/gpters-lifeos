@@ -4,6 +4,9 @@
 
 **지피터스 AI스터디 22기** "1인 기업가를 위한 클로드 코드로 AI 참모와 인생OS 만들기" 과정용 완전 자동화 Obsidian 볼트 + 17개 스킬 패키지입니다.
 
+> 📘 **설치/업데이트 가이드 (웹)**: **https://ninestonelee.github.io/gpters-lifeos/install-guide.html**
+> — 신규 설치 / 업데이트 × 터미널 / AI 에이전트(Claude Code·Codex) 상황별 안내
+
 ---
 
 ## 🚀 설치 (1분)
