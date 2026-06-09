@@ -30,22 +30,27 @@ curl.exe -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main
 
 ---
 
-## 📦 설치되는 스킬 (W2 직전 — 6개)
+## 📦 설치되는 스킬 (v1.1 — 11개)
 
-| # | 스킬 | Tier | 언제 사용? | 가이드 섹션 |
-|---|------|------|----------|------------|
-| 1 | `/today` | 1 (일일) | 매일 아침 7~8시 | [→ 상세](#1-today) |
-| 2 | `/close-day` | 1 (일일) | 매일 저녁 22~23시 | [→ 상세](#2-close-day) |
-| 3 | `/focus-timer` | 1 (일일) | 수시 (start/stop/log) | [→ 상세](#3-focus-timer) |
-| 4 | `/lifeOS-init` | 2 (기초) | W1 첫날 1회 | [→ 상세](#4-lifeos-init) |
-| 5 | `/north-star-define` | 2 (기초) | W1 강의 중 1회 | [→ 상세](#5-north-star-define) |
-| 6 | `/vault-setup` | 2 (기초) | W1 이후 1회 | [→ 상세](#6-vault-setup) |
+| # | 스킬 | Tier | 언제 사용? |
+|---|------|------|----------|
+| 1 | `/today` | 1 (일일) | 매일 아침 7~8시 |
+| 2 | `/close-day` | 1 (일일) | 매일 저녁 22~23시 |
+| 3 | `/focus-timer` | 1 (일일) | 수시 (start/stop/log) |
+| 4 | `/lifeOS-init` | 2 (기초) | W1 첫날 1회 |
+| 5 | `/north-star-define` | 2 (기초) | W1 강의 중 1회 |
+| 6 | `/vault-setup` | 2 (기초) | W1 이후 1회 |
+| 7 | `/weekly-review` 🆕 | 3 (주간) | 매주 일요일 저녁 — 북극성 준수율·주간 리포트 |
+| 8 | `/monthly-archive` 🆕 | 5 (월간) | 매달 1일 — 데일리 아카이빙 + 월간 리포트 |
+| 9 | `/essay-publish` 🆕 | 5 (기억) | 주1회/월말 — 에세이 월별 모음집 + 인덱스 (볼트 내부) |
+| 10 | `/control-tower` 🆕 | 6 (운영) | 주1회+수시 — `home.md` 대시보드 |
+| 11 | `/agent-setup` 🆕 | 6 (참모) | 첫 설정/원할 때 — 나만의 AI 참모 페르소나 (비파괴적) |
 
-> 📅 **단계적 출시**:
-> - **W2 직전 (~5/25)**: 위 6개 (Tier 1~2) ← 현재
-> - **W3 직전 (~6/1)**: +6개 (Tier 3~4 의사결정/AI 협업)
-> - **W4 직전 (~6/8)**: +5개 (Tier 5~6 기억 보존/팀 운영)
-> - **최종**: 17개 스킬 완성
+> 📅 **출시 이력**:
+> - **v1.0 (2026-05-20, W2 직전)**: 6개 (Tier 1~2)
+> - **v1.1 (2026-06-09, W3/W4)**: +5개 — `/weekly-review` `/monthly-archive` `/essay-publish` `/control-tower` `/agent-setup` ← **현재**
+>
+> 💡 **기존 사용자 업데이트**: 설치 스크립트를 다시 실행하면 신규 5개만 추가됩니다. `/agent-setup`은 기존 AI 참모 설정을 **덮어쓰지 않습니다**(유지/수정/교체 선택).
 
 ---
 
@@ -78,9 +83,9 @@ curl.exe -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main
 | 주차 | 날짜 | 주제 | 사용 스킬 |
 |------|------|------|---------|
 | **W1** | 5/19 | 북극성 정의 + 일일 루틴 | /lifeOS-init, /vault-setup, /north-star-define, /today, /focus-timer, /close-day |
-| **W2** | 5/26 | AI 참모 온보딩 | + /decision-log, /pola-briefing, /delegate (출시 예정) |
-| **W3** | 6/2 | 주간 루틴 + 블로그 | + /weekly-review, /blocker-unblock, /gallery-organize (출시 예정) |
-| **W4** | 6/9 | 콘트롤타워 + 최종 발표 | + /agent-onboard, /team-standup, /monthly-archive (출시 예정) |
+| **W2** | 5/26 | AI 참모 온보딩 | + /agent-setup ✅ |
+| **W3** | 6/2 | 주간 루틴 + 에세이 | + /weekly-review ✅, /essay-publish ✅ |
+| **W4** | 6/9 | 콘트롤타워 + 최종 발표 | + /control-tower ✅, /monthly-archive ✅ |
 
 ---
 

@@ -10,19 +10,26 @@ NC='\033[0m'
 REPO_BASE="https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main"
 SKILLS_DIR="$HOME/.claude/skills"
 
-# W2 직전 출시 스킬 6개 (Tier 1~2)
+# 인생OS v1.1 스킬 11개
 # 출시 단계가 늘어나면 아래 배열에 추가만 하면 됨
 SKILLS=(
+    # Tier 1~2 (W1~W2)
     "lifeOS-init"
     "today"
     "close-day"
     "focus-timer"
     "north-star-define"
     "vault-setup"
+    # Tier 3~6 (v1.1 — W3/W4 기능, 2026-06-09)
+    "weekly-review"
+    "monthly-archive"
+    "essay-publish"
+    "control-tower"
+    "agent-setup"
 )
 
 echo -e "${BLUE}🌟 인생OS 스킬 설치를 시작합니다${NC}"
-echo -e "${BLUE}   총 ${#SKILLS[@]}개 스킬 (Tier 1~2)${NC}"
+echo -e "${BLUE}   총 ${#SKILLS[@]}개 스킬 (v1.1)${NC}"
 echo ""
 
 # 스킬 디렉토리 생성
