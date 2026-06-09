@@ -6,6 +6,7 @@
 
 > 📘 **설치/업데이트 가이드 (웹)**: **https://ninestonelee.github.io/gpters-lifeos/install-guide.html**
 > — 신규 설치 / 업데이트 × 터미널 / AI 에이전트(Claude Code·Codex) 상황별 안내
+> 🤖 **이미 설치한 분 → AI 에이전트로 한마디면 업데이트**: **https://ninestonelee.github.io/gpters-lifeos/install-guide.html#upd-agent**
 
 ---
 
@@ -54,6 +55,7 @@ curl.exe -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main
 > - **v1.1 (2026-06-09, W3/W4)**: +5개 — `/weekly-review` `/monthly-archive` `/essay-publish` `/control-tower` `/agent-setup` ← **현재**
 >
 > 💡 **기존 사용자 업데이트**: 설치 스크립트를 다시 실행하면 신규 5개만 추가됩니다. `/agent-setup`은 기존 AI 참모 설정을 **덮어쓰지 않습니다**(유지/수정/교체 선택).
+> → 🤖 **[AI 에이전트(Claude Code·Codex)로 업데이트하는 법](https://ninestonelee.github.io/gpters-lifeos/install-guide.html#upd-agent)**
 
 ---
 
