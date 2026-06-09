@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인생OS 설치 가이드 — GPTers 22기</title>
+<style>
+  :root{
+    --bg:#0f1117; --card:#181b24; --card2:#1f2330; --line:#2a2f3d;
+    --txt:#e7e9ee; --mut:#9aa3b2; --accent:#6ea8fe; --accent2:#7bdcb5;
+    --warn:#ffcf6e; --code:#11141c; --new:#7bdcb5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",Segoe UI,Roboto,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:32px 20px 80px}
+  header{text-align:center;padding:48px 0 24px}
+  header .badge{display:inline-block;font-size:13px;color:var(--accent);border:1px solid var(--line);
+    border-radius:999px;padding:4px 14px;margin-bottom:16px}
+  h1{font-size:34px;margin:8px 0;letter-spacing:-.5px}
+  header p{color:var(--mut);margin:6px 0;font-size:15px}
+  h2{font-size:22px;margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  h3{font-size:17px;margin:24px 0 10px;color:var(--accent2)}
+  p{color:#cfd4de}
+  a{color:var(--accent);text-decoration:none}
+  .lead{color:var(--mut);font-size:15.5px}
+
+  /* 2x2 chooser */
+  .matrix{display:grid;grid-template-columns:120px 1fr 1fr;gap:10px;margin:24px 0}
+  .matrix .h{font-weight:700;color:var(--mut);display:flex;align-items:center;justify-content:center;
+    font-size:13px;text-align:center}
+  .cell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;
+    transition:.15s;display:block}
+  .cell:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .cell .t{font-weight:700;font-size:15px;margin-bottom:4px}
+  .cell .d{font-size:12.5px;color:var(--mut)}
+  .rowlabel{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;
+    background:var(--card2);border:1px solid var(--line);border-radius:14px;text-align:center;padding:8px}
+
+  section.guide{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:18px 0;scroll-margin-top:20px}
+  section.guide .tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;
+    background:rgba(110,168,254,.15);color:var(--accent);margin-bottom:8px}
+  section.guide.update .tag{background:rgba(123,220,181,.15);color:var(--accent2)}
+
+  pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+    overflow-x:auto;font-size:13.5px;position:relative}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace}
+  pre code{color:#d7e0f5}
+  .inline{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:13px;color:#d7e0f5}
+  .copy{position:absolute;top:8px;right:8px;background:var(--card2);border:1px solid var(--line);color:var(--mut);
+    border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer}
+  .copy:hover{color:var(--txt);border-color:var(--accent)}
+
+  ol{padding-left:20px}ol li{margin:6px 0}
+  .steps li{color:#cfd4de}
+  .os{font-size:12px;color:var(--warn);font-weight:700;margin:14px 0 4px}
+
+  .box{border-radius:12px;padding:16px 18px;margin:18px 0;font-size:14.5px}
+  .box.warn{background:rgba(255,207,110,.08);border:1px solid rgba(255,207,110,.35)}
+  .box.safe{background:rgba(123,220,181,.08);border:1px solid rgba(123,220,181,.35)}
+  .box b{color:#fff}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+  th{background:var(--card2);color:var(--mut);font-weight:600}
+  .pill{font-size:11px;background:rgba(123,220,181,.15);color:var(--new);border-radius:6px;padding:1px 7px;margin-left:4px}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600;padding:8px 0}
+  footer{text-align:center;color:var(--mut);font-size:13px;margin-top:60px;padding-top:24px;border-top:1px solid var(--line)}
+  @media(max-width:640px){.matrix{grid-template-columns:1fr}.matrix .h{display:none}.rowlabel{margin-top:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="badge">GPTers 22기 · 인생OS v1.1</div>
+  <h1>🌟 인생OS 설치 가이드</h1>
+  <p>Obsidian × Claude Code로 만드는 세컨드 브레인 + AI 참모</p>
+  <p class="lead">상황에 맞는 카드를 누르세요 — <b>신규 설치 / 업데이트</b> × <b>터미널 / AI 에이전트</b></p>
+</header>
+
+<!-- 2x2 CHOOSER -->
+<div class="matrix">
+  <div class="h"></div>
+  <div class="h">⌨️ 터미널에서</div>
+  <div class="h">🤖 Claude Code / Codex에서</div>
+
+  <div class="rowlabel">🆕 처음<br>설치</div>
+  <a class="cell" href="#new-terminal"><div class="t">신규 · 터미널</div><div class="d">curl 한 줄로 11개 스킬 설치 → /lifeOS-init</div></a>
+  <a class="cell" href="#new-agent"><div class="t">신규 · AI 에이전트</div><div class="d">에이전트에게 설치 요청 → 자동 진행</div></a>
+
+  <div class="rowlabel">🔄 기존<br>업데이트</div>
+  <a class="cell" href="#upd-terminal"><div class="t">업데이트 · 터미널</div><div class="d">같은 명령 재실행 → 신규 5개만 추가</div></a>
+  <a class="cell" href="#upd-agent"><div class="t">업데이트 · AI 에이전트</div><div class="d">"최신으로 업데이트해줘" 한마디</div></a>
+</div>
+
+<div class="box safe">
+  🔒 <b>안심하세요 — 비파괴적 업데이트입니다.</b> 재설치해도 기존 스킬·노트·AI 참모 설정은 그대로 유지됩니다.
+  신규 5개만 추가되고, <span class="inline">/agent-setup</span>은 기존 페르소나를 <b>절대 자동으로 덮어쓰지 않습니다</b>(유지/수정/교체 선택).
+</div>
+
+<!-- ===== 1. NEW · TERMINAL ===== -->
+<h2>🆕 신규 설치</h2>
+
+<section class="guide" id="new-terminal">
+  <span class="tag">신규 · ⌨️ 터미널</span>
+  <h3>1) 스킬 설치 (1분)</h3>
+  <div class="os">▸ Mac / Linux</div>
+  <pre><button class="copy">복사</button><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)</code></pre>
+  <div class="os">▸ Windows (PowerShell — WSL 필요)</div>
+  <pre><button class="copy">복사</button><code>curl.exe -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh | wsl bash</code></pre>
+  <p style="font-size:13px;color:var(--mut)">WSL이 없다면 아래 <a href="#wsl">Windows WSL 설치</a> 참고.</p>
+
+  <h3>2) 설치 후 첫 세팅</h3>
+  <ol class="steps">
+    <li>Claude Code <b>재시작</b> (또는 <span class="inline">/reload-skills</span>)</li>
+    <li><span class="inline">/lifeOS-init</span> — 내 볼트 생성 (<span class="inline">~/lifeOS_이름/</span>)</li>
+    <li><span class="inline">/north-star-define</span> — 북극성(가치 3 + 행동 3) 작성</li>
+    <li><span class="inline">/agent-setup</span> — 나만의 AI 참모 설정 (이름·호칭·톤·역할)</li>
+    <li><span class="inline">/today</span> · <span class="inline">/close-day</span> — 일일 루틴 시작</li>
+  </ol>
+</section>
+
+<section class="guide" id="new-agent">
+  <span class="tag">신규 · 🤖 Claude Code / Codex</span>
+  <h3>1) 에이전트에게 그대로 붙여넣기</h3>
+  <p>터미널을 직접 만지지 않고, AI에게 설치를 맡깁니다. 채팅창에 아래를 붙여넣으세요:</p>
+  <pre><button class="copy">복사</button><code>아래 명령으로 인생OS 스킬을 설치해줘:
+bash &lt;(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)</code></pre>
+  <p style="font-size:13px;color:var(--mut)">Codex CLI도 동일합니다. 에이전트가 명령을 실행하고 결과를 알려줍니다.</p>
+  <h3>2) 이어서 세팅도 부탁</h3>
+  <pre><button class="copy">복사</button><code>설치됐으면 /lifeOS-init 로 볼트 만들고,
+/north-star-define, /agent-setup 까지 차례로 안내해줘.</code></pre>
+  <div class="box warn">⚠️ 설치 후 <b>Claude Code 재시작</b>(또는 <span class="inline">/reload-skills</span>)을 해야 새 스킬이 인식됩니다.</div>
+</section>
+
+<!-- ===== 2. UPDATE ===== -->
+<h2>🔄 기존 사용자 업데이트 (v1.0 → v1.1)</h2>
+
+<section class="guide update" id="upd-terminal">
+  <span class="tag">업데이트 · ⌨️ 터미널</span>
+  <h3>같은 명령을 다시 실행하면 끝</h3>
+  <pre><button class="copy">복사</button><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)</code></pre>
+  <p>이미 있는 6개는 건너뛰고(또는 최신화) <b>신규 5개만 추가</b>됩니다. 설치 후 <b>재시작</b>.</p>
+  <table>
+    <tr><th>신규 스킬</th><th>역할</th></tr>
+    <tr><td>/control-tower <span class="pill">NEW</span></td><td>home.md 대시보드 (3지표 한눈에)</td></tr>
+    <tr><td>/weekly-review <span class="pill">NEW</span></td><td>주간 마감 · 북극성 준수율 실측</td></tr>
+    <tr><td>/monthly-archive <span class="pill">NEW</span></td><td>월간 데일리 아카이빙 + 리포트</td></tr>
+    <tr><td>/essay-publish <span class="pill">NEW</span></td><td>에세이 월별 모음집 + 인덱스</td></tr>
+    <tr><td>/agent-setup <span class="pill">NEW</span></td><td>AI 참모 페르소나 설정 (비파괴적)</td></tr>
+  </table>
+</section>
+
+<section class="guide update" id="upd-agent">
+  <span class="tag">업데이트 · 🤖 Claude Code / Codex</span>
+  <h3>한마디면 됩니다</h3>
+  <pre><button class="copy">복사</button><code>인생OS 스킬을 최신(v1.1)으로 업데이트해줘:
+bash &lt;(curl -fsSL https://raw.githubusercontent.com/ninestonelee/gpters-lifeos/main/install-skill.sh)</code></pre>
+  <p>업데이트 후 새 스킬을 바로 써보세요:</p>
+  <pre><button class="copy">복사</button><code>/control-tower 로 내 대시보드(home.md) 만들어줘</code></pre>
+  <div class="box safe">🔒 <b>/agent-setup 재실행해도 안전.</b> 기존 AI 참모 설정이 있으면 "유지(기본)/수정/교체"를 물어봅니다. 그냥 두면 아무것도 바뀌지 않습니다.</div>
+</section>
+
+<!-- 확인 -->
+<h2>✅ 설치 확인</h2>
+<p>Claude Code에서 아래를 입력해 11개가 보이면 성공:</p>
+<pre><button class="copy">복사</button><code>/control-tower</code></pre>
+<p style="font-size:13.5px;color:var(--mut)">또는 터미널에서:</p>
+<pre><button class="copy">복사</button><code>ls ~/.claude/skills | grep -E "today|close-day|focus-timer|lifeOS-init|north-star-define|vault-setup|weekly-review|monthly-archive|essay-publish|control-tower|agent-setup"</code></pre>
+
+<!-- 11 skills -->
+<h2>🧩 전체 스킬 11개</h2>
+<table>
+  <tr><th>#</th><th>스킬</th><th>언제</th></tr>
+  <tr><td>1</td><td>/today</td><td>매일 아침</td></tr>
+  <tr><td>2</td><td>/close-day</td><td>매일 저녁</td></tr>
+  <tr><td>3</td><td>/focus-timer</td><td>수시</td></tr>
+  <tr><td>4</td><td>/lifeOS-init</td><td>첫날 1회</td></tr>
+  <tr><td>5</td><td>/north-star-define</td><td>북극성 작성</td></tr>
+  <tr><td>6</td><td>/vault-setup</td><td>볼트 커스터마이징</td></tr>
+  <tr><td>7</td><td>/weekly-review <span class="pill">NEW</span></td><td>매주 일요일</td></tr>
+  <tr><td>8</td><td>/monthly-archive <span class="pill">NEW</span></td><td>매달 1일</td></tr>
+  <tr><td>9</td><td>/essay-publish <span class="pill">NEW</span></td><td>주1회/월말</td></tr>
+  <tr><td>10</td><td>/control-tower <span class="pill">NEW</span></td><td>주1회+수시</td></tr>
+  <tr><td>11</td><td>/agent-setup <span class="pill">NEW</span></td><td>첫 설정/원할 때</td></tr>
+</table>
+
+<!-- FAQ -->
+<h2>❓ 자주 묻는 질문</h2>
+<details><summary>업데이트하면 기존 노트나 설정이 사라지나요?</summary>
+<p>아니요. 스킬 파일만 추가/최신화하며 볼트의 노트·데이터는 건드리지 않습니다. AI 참모 설정(<span class="inline">/agent-setup</span>)도 기존 것을 보존합니다.</p></details>
+<details><summary>"command not found" / "skill not found"가 떠요.</summary>
+<p>설치 후 Claude Code <b>재시작</b> 또는 <span class="inline">/reload-skills</span>를 실행하세요. 그래도 안 되면 설치 명령을 한 번 더 실행하세요.</p></details>
+<details><summary>Windows인데 WSL이 뭔가요?</summary>
+<p>아래 <a href="#wsl">WSL 설치</a>를 참고하세요. 리눅스 환경을 윈도우에서 쓰게 해주는 기능입니다.</p></details>
+<details><summary>터미널과 AI 에이전트, 뭐가 더 쉬워요?</summary>
+<p>처음이라면 <b>AI 에이전트(Claude Code/Codex)에 붙여넣기</b>가 가장 쉽습니다. 명령을 대신 실행하고 다음 단계까지 안내해줍니다.</p></details>
+
+<!-- WSL -->
+<h2 id="wsl">🪟 Windows WSL 설치</h2>
+<p>PowerShell을 <b>관리자 권한</b>으로 열고:</p>
+<pre><button class="copy">복사</button><code>wsl --install</code></pre>
+<p>재부팅 후 Ubuntu가 설치되면, 위의 신규/업데이트 명령을 그대로 사용하세요.</p>
+
+<footer>
+  인생OS v1.1 · GPTers 22기 · <a href="https://github.com/ninestonelee/gpters-lifeos">github.com/ninestonelee/gpters-lifeos</a><br>
+  결정은 당신이, 실행은 AI 참모가. 🌟
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var code=b.parentElement.querySelector('code').innerText;
+    navigator.clipboard.writeText(code).then(function(){
+      var o=b.innerText;b.innerText='복사됨!';setTimeout(function(){b.innerText=o},1200);
+    });
+  });
+});
+</script>
+</body>
+</html>
